@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<body>
+		<div id="body">
+			<div id="content">
+				<h1>{{Garden_tip.title}}</h1>
+					<ul class="section">
+					<li>
+						<img src="{{ Garden_tip.image.url }}" alt="Image" >
+					</li>
+                    <div>				
+                        <p>
+                            {{Garden_tip.descreption}}
+                        </p>
+                        <p>
+                           Posted On : {{Garden_tip.tips_date}}
+                        </p>
+                    </div>
+				</ul>
+			</div>
+		</div>
+		
+</body>
+
+{% endblock body %}

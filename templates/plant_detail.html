@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<body>
+		<div id="body">
+			<div id="content">
+				<h1>{{Plantt.title}}</h1>
+					<ul class="section">
+					<li>
+						<img src="{{ Plantt.image.url }}" alt="Image" >
+					</li>
+                    <div>				
+                        <p>
+                            {{Plantt.descreption}}
+                        </p>
+                    </div>
+				</ul>
+			</div>
+		</div>
+</body>
+
+{% endblock body %}

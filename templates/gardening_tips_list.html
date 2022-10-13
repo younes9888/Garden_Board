@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<body>
+		<div id="body">
+			<div id="content">
+				<h1>Tips gardening</h1>				
+				
+					{% for gt in Garden_tips %}
+					<ul class="section">
+					<li>
+						<img src="{{ gt.image.url }}" alt="Image" >
+						
+						<div>
+							
+							<a href="{% url 'plants:garden_tip' gt.id %}" ><h2>{{gt.title}}</h2></a> 
+							<p>
+								{{gt.descreption}}
+							</p>
+							<p>
+								<h3>Posted on : {{gt.tips_date}}</h3>
+							</p>
+							
+						</div>
+					</li>
+				</ul>
+					{% endfor %}
+				
+			</div>
+		</div>
+</body>
+
+{% endblock body %}

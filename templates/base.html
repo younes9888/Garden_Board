@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Garden Walkthrough Website Template</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<a href="/" id="logo"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
+			<ul>
+				<li >
+					<a href="/">Home</a>
+				</li>
+				
+				<li>
+					<a href="{% url 'plants:plants'%}">Plants</a>
+				</li>
+				<li>
+					<a href="{% url 'plants:gardens'%}">Gardens</a>
+				</li>
+				<li>
+					<a href="{% url 'plants:garden_tips'%}">Gardening tips</a>
+					
+				</li>
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+				<li>  
+					{% if user.is_authenticated %}
+					<a href="{% url 'logout' %} ">Logout</a>	
+					{% else %}
+					<a href="{% url 'login' %}">Login</a>
+				{% endif %}
+					
+				</li>
+			</ul>
+		</div>
+		
+            {% block body %}
+
+            {% endblock body %}
+
+		<div id="footer">
+			<div>
+				<div>
+					<h1>Place Holder</h1>
+					<ul>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h1>Place Holder</h1>
+					<ul>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h1>Place Holder</h1>
+					<ul>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+						<li>
+							<a href="index.html">This is just a place holder</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h1>Connect</h1>
+					<a href="http://www.freewebsitetemplates.com/misc/contact" target="_blank" id="mail">Email us</a>
+					<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
+					<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
+					<a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google&#43;</a>
+				</div>
+			</div>
+			<p>
+				Garden Walkthrough &copy; 2022  | All Rights Reserved
+			</p>
+		</div>
+	</div>
+</body>
+</html>
