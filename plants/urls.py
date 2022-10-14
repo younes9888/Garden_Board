@@ -15,4 +15,5 @@ urlpatterns = [
 
     path('garden_tips/', views.Garden_tips_ListView.as_view(),name='garden_tips'),
     path('garden_tips/<int:pk>', views.Garden_tips_DetailView.as_view(),name='garden_tip'),
+    
 ]
