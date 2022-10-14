@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap4 %}
 {% block body %}
 <body>
 		<div id="body">
@@ -14,6 +15,10 @@
 						<div>
 							
 							<a href="{% url 'plants:garden_tip' gt.id %}" ><h2>{{gt.title}}</h2></a> 
+							<form method="POST" action="#">
+								<button type="submit" value="like" name="like" ><i class="far fa-heart"></i></button>
+
+							</form>
 							<p>
 								{{gt.descreption}}
 							</p>
