@@ -7,6 +7,7 @@ body {
 	margin: 0;
 	min-width: 940px;
 	padding: 0;
+
 }
 a {
 	outline: none;
@@ -105,7 +106,7 @@ p a:hover {
 	background: #ffffff;
 }
 #body div.header {
-	height: 557px;
+	height: 228px;
 }
 #body div.header div {
 	position: relative;
@@ -159,9 +160,11 @@ p a:hover {
 	position: relative;
 	top: 5px;
 	width: 20px;
+	text-decoration: none;
 }
 #body div.header div div p a.continue:hover {
 	background: url(../images/interface.png) no-repeat -400px -20px;
+	text-decoration: none;
 }
 #body div.header ul {
 	background: #356618;
@@ -184,11 +187,13 @@ p a:hover {
 #body div.header ul li a.figure {
 	display: block;
 	float: left;
+	text-decoration: none;
 }
 #body div.header ul li a.figure img {
 	display: block;
 	border: 1px solid #ffffff;
 	margin: 0 20px 0;
+	text-decoration: none;
 }
 #body div.header ul li.current h3 a {
 	color: #e3e699;
@@ -215,19 +220,19 @@ p a:hover {
 	text-align: left;
 }
 #body div.body {
-	padding: 23px 20px 0;
+	padding: 43px 20px 0;
 }
 #body div.body h1,
 #body div.footer div h1 {
 	background: #dce9d4;
-	border-bottom: 2px solid #b3cca4;
+	border-bottom: 1px solid #b3cca4;
 	color: #836145;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 18px;
 	font-weight: normal;
 	height: 37px;
 	line-height: 37px;
-	margin: 0;
+	margin: 0px;
 	padding: 0 0 0 20px;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 1px #ffffff;
@@ -255,6 +260,8 @@ p a:hover {
 	margin: 0;
 	padding: 24px 0 10px;
 	text-transform: uppercase;
+	text-decoration: none;
+
 }
 #body div.body ul li p {
 	color: #4b4b4b;
@@ -483,6 +490,7 @@ p a:hover {
 }
 #body div#content div#sidebar div ul li a:hover {
 	color: #4b4b4f;
+	text-decoration: none;
 }
 #body div#content div#sidebar div:first-child ul li {
 	letter-spacing: 0.024em;
@@ -579,5 +587,25 @@ p a:hover {
 	height: 37px;
 	line-height: 37px;
 	text-align: center;
-	text-shadow: 1px 1px 1px #8da181;
 }
+
+
+  
+button{
+    cursor: pointer;
+    outline: 0;
+    color: #AAA;
+  
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+  .green{
+    color: green;
+  }
+  
+  .red{
+    color: red;
+  }

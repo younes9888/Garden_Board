@@ -1,31 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+
 <body>
 		<div id="body">
 			<div id="content">
-				<h1>Plants</h1>
-				
-				
+				<h1>Check out our plants</h1>
 					{% for pp in Plant %}
 					<ul class="section">
 					<li>
-						<img src="{{ pp.image.url }}" alt="Image" >
+						
+					<img src="{{ pp.image.url }}" alt="Image" >
 						<div>
-							
-							<a href="{% url 'plants:plant' pp.id %}" ><h2>{{pp.title}}</h2></a>
+							<a style="text-decoration:none;"  href="{% url 'plants:plant' pp.id %}" ><h2>{{pp.title}}</h2></a>
 							<p>
-								{{pp.descreption}}
+								{{pp.descreption}}						
 							</p>
-							
 						</div>
 					</li>
 				</ul>
 					{% endfor %}
 				
 			</div>
-		</div>
-		
+		</div>	
 </body>
-
 {% endblock body %}
+

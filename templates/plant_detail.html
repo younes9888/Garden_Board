@@ -7,6 +7,7 @@
 				<h1>{{Plantt.title}}</h1>
 					<ul class="section">
 					<li>
+						
 						<img src="{{ Plantt.image.url }}" alt="Image" >
 					</li>
                     <div>				
@@ -14,9 +15,18 @@
                             {{Plantt.descreption}}
                         </p>
                     </div>
+						{% if request.user.is_authenticated %}
+						<form method="POST" action={% url 'interaction:like_plant' plant_id=Plantt.id  %}>
+							{% csrf_token %} 
+							<button type= "submit" value="like" name="like" class="btn" id="green" ><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+							<button type= "submit" value="dislike" name="dislike" class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+						</form>
+						{% endif %}
 				</ul>
 			</div>
 		</div>
+		<script type="text/javascript" src={% static 'js/js.js' %}>
+		  </script>	
 </body>
 
 {% endblock body %}

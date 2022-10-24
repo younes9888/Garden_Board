@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load bootstrap4 %}
+
 {% block body %}
 <body>
 		<div id="body">
 			<div id="content">
-				<h1>Tips gardening</h1>				
-				
+				<h1>Tips gardening</h1>	
+							
 					{% for gt in Garden_tips %}
 					<ul class="section">
 					<li>
 						<img src="{{ gt.image.url }}" alt="Image" >
-						
 						<div>
 							
-							<a href="{% url 'plants:garden_tip' gt.id %}" ><h2>{{gt.title}}</h2></a> 
-							<form method="POST" action="#">
-								<button type="submit" value="like" name="like" ><i class="far fa-heart"></i></button>
-
-							</form>
+							<a style="text-decoration:none;"  href="{% url 'plants:garden_tip' gt.id %}" ><h2>{{gt.title}}</h2></a> 
+							
 							<p>
 								{{gt.descreption}}
 							</p>

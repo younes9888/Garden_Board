@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'plants',
     'accounts',
     'contact',
+    'interaction',
     'rest_framework',
     'api',
 ]

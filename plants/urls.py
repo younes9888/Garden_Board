@@ -8,8 +8,10 @@ app_name='plants'
 
 urlpatterns = [
     path('', views.index_view,name='index'),
+    
     path('plant/', views.PlantListView.as_view(),name='plants'),
     path('plant/<int:pk>', views.PlantDetailView.as_view(),name='plant'),
+
     path('garden/', views.GardenListView.as_view(),name='gardens'),
     path('garden/<int:pk>', views.GardenDetailView.as_view(),name='garden'),
 

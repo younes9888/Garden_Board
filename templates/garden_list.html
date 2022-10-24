@@ -4,7 +4,7 @@
 <body>
 		<div id="body">
 			<div id="content">
-				<h1>Gardens</h1>
+				<h1>Check out our gardens</h1>
 				
 				
 					{% for gg in Garden %}
@@ -13,7 +13,7 @@
 						<img src="{{ gg.image.url }}" alt="Image" >
 						<div>
 							
-							<a href="{% url 'plants:garden' gg.id %}" ><h2>{{gg.title}}</h2></a>
+							<a style="text-decoration:none;"  href="{% url 'plants:garden' gg.id %}" ><h2>{{gg.title}}</h2></a>
 							<p>
 								{{gg.descreption}}
 							</p>

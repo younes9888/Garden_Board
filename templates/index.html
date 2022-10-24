@@ -5,34 +5,23 @@
 		<div id="body">
 			<div class="header">
 				<div>
-					<a href="{% url 'plants:garden_tip' index_tips.id %}"><img src="{{index_tips.image.url}}" alt="Image"></a>
+					<a style="text-decoration:none;"  href="{% url 'plants:garden_tip' index_tips.id %}"><img src="{{index_tips.image.url}}" style="width:900px;height:250px" alt="Image"></a>
 					<div>
-						<h1><a href="{% url 'plants:garden_tip' index_tips.id %}">{{index_tips.title}}</a></h1>
+						<h1><a style="text-decoration:none;"  href="{% url 'plants:garden_tip' index_tips.id %}">{{index_tips.title}}</a></h1>
 						<p>
 							{{index_tips.descreption}} <a href="{% url 'plants:garden_tip' index_tips.id %}" class="continue"></a>
 						</p>
 					</div>
 				</div>
-				<ul>
-					<p style="color:#e3e699">Latest added plants</p>
-					{%  for i in index_top_three_plants %}
-					<li>
-						<a href="{% url 'plants:plant' i.id %}" class="figure"><img src="{{i.image.url}}" alt="Image"></a>
-						<h3><a href="{% url 'plants:plant' i.id %}">{{i.title}}</a></h3>
-						<p>
-							Lorem ipsum dolor sit amet lires consectetur adipisicing elit.
-						</p>
-					</li>
-					{% endfor %}
-				</ul>
+				
 			</div>
 			<div class="body">
 				<h1>Featured Gardens</h1>
 				<ul>
 					{% for i in index_feature_garden %}
 					<li>
-						<a href="{% url 'plants:garden' i.id %}"><img src="{{i.image.url }}" alt="Image' "></a>
-						<a href="{% url 'plants:garden' i.id %}"><h2>{{i.title}}</h2></a>
+						<a style="text-decoration:none;"  href="{% url 'plants:garden' i.id %}"><img src="{{i.image.url }}" alt="Image' "></a>
+						<a style="text-decoration:none;"  href="{% url 'plants:garden' i.id %}"><h2>{{i.title}}</h2></a>
 						<p>
 							{{i.descreption}}
 						</p>
@@ -40,18 +29,22 @@
 					{% endfor %}
 				</ul>
 			</div>
+			<div class="body">
+				<h1>Lastest added plants</h1>
+				<ul>
+					{%  for i in index_top_three_plants %}
+					<li style="width:273px">
+						<a href="{% url 'plants:plant' i.id %}" class="figure"><img src="{{i.image.url}}" alt="Image"></a>
+						<h3 style="text-decoration:none;" ><a style="text-decoration:none;" href="{% url 'plants:plant' i.id %}">{{i.title}}</a></h3>
+						<p>
+							Lorem ipsum dolor sit amet lires consectetur adipisicing elit.
+						</p>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
 			<div class="footer">
-				<a href="{% url 'plants:plant' index_plant_of_theweek.id %}"><img src="{{index_plant_of_theweek.image.url}}" alt="Image'"></a>
-				<div>
-					<h1>Plant of the Week</h1>
-					<ul>
-						<li>
-							<a href="{% url 'plants:plant' index_plant_of_theweek.id %}">{{index_plant_of_theweek.title}}</a>
-							
-							<p>{{index_plant_of_theweek.descreption}}</p>
-						</li>
-					</ul>
-				</div>
+				
 			</div>
 		</div>
 		

@@ -9,6 +9,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('plants.urls')),
+    path('', include('interaction.urls')),
     path('accounts/', include('accounts.urls')),
     path('contact/', include('contact.urls')),
     path('api/', include('api.urls')),

@@ -8,10 +8,17 @@
 </br>
 </br>
 <form method='POST' action='#' style="color:white">
+  <p>Enter your Username and password to login</p>
+</br>
   {% csrf_token %}
   {{form}}
   <button type="submit" class="btn btn-primary" value="Login">Login</button>
-  
+</br>
+</br>
+  <small>You forgot your password ? <a href="{% url 'reset_password' %}"> Clic here </a></small>
+</br>
+</br>
+<small>You are new member ? <a href="{% url 'register' %}"> Create new account </a></small>
   </form>
 </br>
 </br>

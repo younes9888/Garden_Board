@@ -1,4 +1,6 @@
 #from .models import Contact
+import configparser
+from pyexpat import model
 from django.shortcuts import render
 from .models import Info
 from django.core.mail import send_mail
