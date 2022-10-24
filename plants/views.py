@@ -4,6 +4,7 @@ from django.views.generic import View,TemplateView,ListView,DetailView
 from django.shortcuts import render
 from .models import Plant,Garden,Garden_tips
 from django.shortcuts import redirect
+from .models import Comment
 
 from plants.form import CommentForm
 
@@ -30,10 +31,8 @@ class PlantDetailView(DetailView):
     form=CommentForm
 
     def post(self,request,*args,**kwargs):
-        print('entre to post_comment functionnnnnnnnnnnnnnnnnnnnnnnnnn ')
         form=CommentForm(request.POST)
         if form.is_valid():
-            print('form is validddddddd')
             plant_commentt=self.get_object()
             form.instance.user=request.user
             form.instance.plant_comment=plant_commentt
@@ -42,9 +41,10 @@ class PlantDetailView(DetailView):
             return redirect(reverse('plants:plant', kwargs={'pk':plant_commentt.id}))
 
     def get_context_data(self, **kwargs):
+        post_comments=Comment.objects.all().filter(plant_comment=self.object.id)
+        post_comments_count=Comment.objects.all().filter(plant_comment=self.object.id).count()
         context=super().get_context_data(**kwargs)
-        context['form']=self.form
-        print('contex===',context)
+        context.update({'form':self.form,'post_comments':post_comments,'post_comments_count':post_comments_count})
         return context
 
 

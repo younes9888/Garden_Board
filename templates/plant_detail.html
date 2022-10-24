@@ -16,19 +16,30 @@
                         </p>
                     </div>
 						{% if request.user.is_authenticated %}
+					<div>
 						<form method="POST" action={% url 'interaction:like_plant' plant_id=Plantt.id  %}>
 							{% csrf_token %} 
 							<button type= "submit" value="like" name="like" class="btn" id="green" ><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
 							<button type= "submit" value="dislike" name="dislike" class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
 						</form>
+					</div>
 						{% endif %}
-
+                         <div>
+							<h2>Comments({{post_comments_count}})</h2>
+							{% for post_comment in post_comments %}
+                         <b>{{post_comment.user}}</b>
+                        <time>{{post_comment.date_comment}}</time>
+						<p>{{post_comment.content}} </p>
+						{% endfor %}
+						 </div>
+						 <div>
 						<form method="POST" action={% url 'plants:plant' Plantt.id %}>
 							{% csrf_token %} 
 							{{form}}
 							<button type= "submit" value="Comment" name="Comment" >Comment</button>
 
 						</form>
+					</div>
 
 				</ul>
 			</div>
