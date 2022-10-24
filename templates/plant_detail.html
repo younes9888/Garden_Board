@@ -8,7 +8,7 @@
 					<ul class="section">
 					<li>
 						
-						<img src="{{ Plantt.image.url }}" alt="Image" >
+						<img style="width:300px;height:200px" src="{{ Plantt.image.url }}" alt="Image" >
 					</li>
                     <div>				
                         <p>
@@ -22,6 +22,14 @@
 							<button type= "submit" value="dislike" name="dislike" class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
 						</form>
 						{% endif %}
+
+						<form method="POST" action={% url 'plants:plant' Plantt.id %}>
+							{% csrf_token %} 
+							{{form}}
+							<button type= "submit" value="Comment" name="Comment" >Comment</button>
+
+						</form>
+
 				</ul>
 			</div>
 		</div>

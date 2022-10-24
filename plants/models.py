@@ -1,6 +1,8 @@
 from datetime import datetime
+from email.mime import audio
 from time import time
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -32,4 +34,15 @@ class Garden_tips(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    user=models.ForeignKey(to=User,on_delete=models.CASCADE)
+    plant_comment=models.ForeignKey(to=Plant,on_delete=models.CASCADE)
+    date_comment=models.DateField(auto_now_add=True)
+    content=models.TextField()
+        
+    def __str__(self):
+        return str(self.user)
+
+
         

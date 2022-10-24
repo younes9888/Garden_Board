@@ -10,7 +10,7 @@
 					{% for gg in Garden %}
 					<ul class="section">
 					<li>
-						<img src="{{ gg.image.url }}" alt="Image" >
+						<img style="width:300px;height:200px" src="{{ gg.image.url }}" alt="Image" >
 						<div>
 							
 							<a style="text-decoration:none;"  href="{% url 'plants:garden' gg.id %}" ><h2>{{gg.title}}</h2></a>

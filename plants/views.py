@@ -1,6 +1,11 @@
+from django.urls import reverse
+from multiprocessing import context
 from django.views.generic import View,TemplateView,ListView,DetailView
 from django.shortcuts import render
 from .models import Plant,Garden,Garden_tips
+from django.shortcuts import redirect
+
+from plants.form import CommentForm
 
 # Create your views here.
 def index_view(request):
@@ -22,6 +27,30 @@ class PlantDetailView(DetailView):
     template_name= 'plant_detail.html'
     model=Plant
     context_object_name='Plantt'
+    form=CommentForm
+
+    def post(self,request,*args,**kwargs):
+        print('entre to post_comment functionnnnnnnnnnnnnnnnnnnnnnnnnn ')
+        form=CommentForm(request.POST)
+        if form.is_valid():
+            print('form is validddddddd')
+            plant_commentt=self.get_object()
+            form.instance.user=request.user
+            form.instance.plant_comment=plant_commentt
+            form.save()
+            print('form====================',form)
+            return redirect(reverse('plants:plant', kwargs={'pk':plant_commentt.id}))
+
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        context['form']=self.form
+        print('contex===',context)
+        return context
+
+
+
+
+
 
 
 class GardenListView(ListView):
