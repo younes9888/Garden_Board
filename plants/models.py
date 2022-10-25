@@ -44,5 +44,23 @@ class Comment(models.Model):
     def __str__(self):
         return str(self.user)
 
+class Comment_garden(models.Model):
+    user=models.ForeignKey(to=User,on_delete=models.CASCADE)
+    plant_comment=models.ForeignKey(to=Garden,on_delete=models.CASCADE)
+    date_comment=models.DateField(auto_now_add=True)
+    content=models.TextField()
+        
+    def __str__(self):
+        return str(self.user)
+
+class Comment_garden_tips(models.Model):
+    user=models.ForeignKey(to=User,on_delete=models.CASCADE)
+    plant_comment=models.ForeignKey(to=Garden_tips,on_delete=models.CASCADE)
+    date_comment=models.DateField(auto_now_add=True)
+    content=models.TextField()
+        
+    def __str__(self):
+        return str(self.user)
+
 
         

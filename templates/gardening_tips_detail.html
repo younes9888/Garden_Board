@@ -23,6 +23,23 @@
 						<button type= "submit" value="dislike" name="dislike" class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
 					</form>
 				</ul>
+				<div>
+					<h2>Comments({{post_comments_count}})</h2>
+					{% for post_comment in post_comments %}
+				 <b>{{post_comment.user}}</b>
+				<time>{{post_comment.date_comment}}</time>
+				<p>{{post_comment.content}} </p>
+				{% endfor %}
+				 </div>
+				 <div>
+				<form method="POST" action={% url 'plants:garden_tip' Garden_tip.id %}>
+					{% csrf_token %} 
+					{{form}}
+				</br>
+					<button type= "submit" value="Comment" name="Comment" >Comment</button>
+
+				</form>
+			</div>
 			</div>
 		</div>
 		<script type="text/javascript" src={% static 'js/js.js' %}>

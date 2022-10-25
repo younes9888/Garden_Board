@@ -14,6 +14,9 @@
                         <p>
                             {{Plantt.descreption}}
                         </p>
+						<p>
+							Posted On : {{Plantt.uploaded_date}}
+						 </p>
                     </div>
 						{% if request.user.is_authenticated %}
 					<div>
@@ -36,6 +39,7 @@
 						<form method="POST" action={% url 'plants:plant' Plantt.id %}>
 							{% csrf_token %} 
 							{{form}}
+						</br>
 							<button type= "submit" value="Comment" name="Comment" >Comment</button>
 
 						</form>

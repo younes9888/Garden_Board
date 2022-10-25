@@ -33,8 +33,8 @@
 				<h1>Lastest added plants</h1>
 				<ul>
 					{%  for i in index_top_three_plants %}
-					<li style="width:273px">
-						<a href="{% url 'plants:plant' i.id %}" class="figure"><img src="{{i.image.url}}" alt="Image"></a>
+					<li style="width:272px">
+						<a href="{% url 'plants:plant' i.id %}" class="figure"><img style="width:275px ;height:200px" src="{{i.image.url}}" alt="Image"></a>
 						<h3 style="text-decoration:none;" ><a style="text-decoration:none;" href="{% url 'plants:plant' i.id %}">{{i.title}}</a></h3>
 						<p>
 							Lorem ipsum dolor sit amet lires consectetur adipisicing elit.
